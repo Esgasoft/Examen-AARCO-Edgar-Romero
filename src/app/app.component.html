@@ -86,7 +86,7 @@
     </div>
     <div class="nombre3 d-flex justify-content-end">
     <div class="n4 p-2 bd-highlight">COLONIA:</div>   
-    <mat-form-field >
+    <mat-form-field hintLabel="Seleccionar colonia">
         <mat-label>Colonia</mat-label>
         <mat-select formControlName="colonia">
           <mat-option value="item.iIdUbicacion" *ngFor= "let item of ubicacion">{{item.sUbicacion}}</mat-option>
