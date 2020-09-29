@@ -1,0 +1,126 @@
+<div class="nombre d-flex justify-content-center align-items-center">
+<div class="nombre2" [formGroup]="form">
+    <h1 class="nombre3 d-flex justify-content-center"><B>Vehiculo</B></h1>
+    <mat-divider></mat-divider>
+    <div class="nombre3 d-flex justify-content-end">
+    <div class="n4 p-2 bd-highlight">MARCA:</div>
+    <mat-form-field appearance="fill">
+        <mat-label>Selecciona una marca</mat-label>
+        <mat-select formControlName="vehiculo">
+          <mat-option [value]="item.iIdMarca" *ngFor="let item of marcas">{{item.sMarca}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('vehiculo').hasError('required')">
+            Este campo no debe de ir vacio
+          </mat-error>
+      </mat-form-field>
+    </div>
+      <div class="nombre3 d-flex justify-content-end">
+        <div class="n4 p-2 bd-highlight">SUBMARCA:</div>
+      <mat-form-field appearance="fill">
+        <mat-label>Selecciona una submarca</mat-label>
+        <mat-select formControlName="submarca">
+          <mat-option [value]="item.iIdSubMarca" *ngFor="let item of submarca">{{item.sSubMarca}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('submarca').hasError('required')">
+            Este campo no debe de ir vacio
+          </mat-error>
+      </mat-form-field>
+    </div>
+      <div class="nombre3 d-flex justify-content-end">
+        <div class="n4 p-2 bd-highlight">MODELO:</div>
+      <mat-form-field appearance="fill">
+        <mat-label>Selecciona una modelo</mat-label>
+        <mat-select formControlName="modelo">
+          <mat-option [value]="item.iIdModelo" *ngFor="let item of modelo">{{item.sModelo}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('modelo').hasError('required')">
+            Este campo no debe de ir vacio
+          </mat-error>
+      </mat-form-field>
+    </div>
+      <div class="nombre3 d-flex justify-content-end">
+        <div class="n4 p-2 bd-highlight">DESCRIPCION:</div>
+      <mat-form-field appearance="fill">
+        <mat-label>Selecciona una descripción de modelo</mat-label>
+        <mat-select formControlName="descripcion">
+          <mat-option [value]="item.iIdDescripcionModelo" *ngFor="let item of descripcion">{{item.sDescripcion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('descripcion').hasError('required')">
+            Este campo no debe de ir vacio
+          </mat-error>
+      </mat-form-field>
+    </div>
+    <h1 class="nombre3 d-flex justify-content-center"><B>Domicilio</B></h1>
+    <mat-divider></mat-divider>
+    <div class="nombre3 d-flex justify-content-end">
+        <div class="n4 p-2 bd-highlight"> POSTAL:</div>
+        <mat-form-field appearance="fill" hintLabel="Max 5 caracteres">
+            <mat-label>Codigo Postal</mat-label>
+            <input matInput oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" #input maxlength="5"
+            formControlName="codigo" (keyup.enter)="getpostalcode()">
+            <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint>
+            <mat-error *ngIf="form.get('codigo').hasError('required')">
+                Este campo no debe de ir vacio
+              </mat-error>
+          </mat-form-field>
+    </div>
+    <div class="nombre3 d-flex justify-content-end">
+        <div class="n4 p-2 bd-highlight">ESTADO:</div>
+        <mat-form-field appearance="fill">
+            <mat-label>Estado</mat-label>
+            <input matInput formControlName="estado">
+            <mat-error *ngIf="form.get('estado').hasError('required')">
+                Este campo no debe de ir vacio
+              </mat-error>
+          </mat-form-field>
+    </div>
+    <div class="nombre3 d-flex justify-content-end">
+        <div class="n4 p-2 bd-highlight">MUNICIPIO:</div>
+        <mat-form-field appearance="fill">
+            <mat-label>Municipio</mat-label>
+            <input matInput formControlName="municipio">
+            <mat-error *ngIf="form.get('municipio').hasError('required')">
+                Este campo no debe de ir vacio
+              </mat-error>
+          </mat-form-field>
+    </div>
+    <div class="nombre3 d-flex justify-content-end">
+    <div class="n4 p-2 bd-highlight">COLONIA:</div>   
+    <mat-form-field appearance="fill">
+        <mat-label>Colonia</mat-label>
+        <mat-select formControlName="colonia">
+          <mat-option value="item.iIdUbicacion" *ngFor= "let item of ubicacion">{{item.sUbicacion}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('colonia').hasError('required')">
+            Este campo no debe de ir vacio
+          </mat-error>
+      </mat-form-field>
+    </div>
+    <!--
+    <div class="nombre3 d-flex justify-content-end">
+        <div class="nombre3 p-2 flex-fill bd-highlight">COLONIA:</div>
+        <mat-form-field appearance="fill">
+            <mat-label>Colonia</mat-label>
+            <input matInput>
+          </mat-form-field>
+    </div>
+    -->
+    <h1 class="nombre3 d-flex justify-content-center"><B>Persona</B></h1>
+    <mat-divider></mat-divider>
+    <div class="nombre3 d-flex justify-content-end">
+    <div class="n5 p-2 bd-highlight">FECHA:</div>
+    <mat-form-field appearance="fill">
+        <mat-label>Ingresar fecha de nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('fecha').hasError('required')">
+            Este campo no debe de ir vacio
+          </mat-error>
+      </mat-form-field>
+      </div>
+      
+      <button class="Center d-flex justify-content-center" mat-raised-button color="primary"(click)="getsuccess()">COTIZAR</button>
+    
+</div></div>
+
