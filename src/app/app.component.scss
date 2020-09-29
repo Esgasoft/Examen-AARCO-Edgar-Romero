@@ -1,9 +1,10 @@
 .nombre{
     height: 100vh; width: 100%;
+    background: #F2F3EB;
 }
 .nombre2{
-    height: 850px; width: 550px; 
-    border: 1px solid black;
+    height: 700px; width: 550px; 
+    border: 2px solid black;
 }
 .nombre3{
     width: 95%; 
@@ -27,3 +28,19 @@
   .n5{
     margin-right:170px;
 }
+.n6{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+.button{
+    border-radius: 0px !important;
+    margin-top: 10px;
+    background-color: #F2F3EB !important;
+    color: #70798C;
+    border: 2px solid #70798C;
+}
+.button:hover{background-color: #70798C !important;
+color: #F2F3EB;}

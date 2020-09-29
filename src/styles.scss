@@ -22,4 +22,11 @@ $app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-wa
 @import '~bootstrap/scss/bootstrap';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; }
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+html {
+    font-family: 'Montserrat', Arial, sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
